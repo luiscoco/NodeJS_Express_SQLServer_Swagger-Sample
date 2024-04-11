@@ -41,5 +41,57 @@ CREATE TABLE Notes (
 );
 ```
 
+See the new database and table in SSMS
+
+![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/9c07b37e-e6d5-471d-825a-2d29cd941d09)
+
+## 2. Project folders and files structure
+
+![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/8dc7c19b-3e47-4c00-8d8a-6a8cf0f9ad9e)
+
+## 3. Project dependencies/libraries
+
+**package.json**
+
+```json
+{
+    "name": "sql-server-notes-api",
+    "version": "1.0.0",
+    "description": "A simple API to manage notes using SQL Server",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js",
+      "dev": "nodemon app.js"
+    },
+    "keywords": ["express", "sql-server", "api", "notes"],
+    "author": "Your Name",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.17.1",
+      "mssql": "^7.1.3",
+      "swagger-jsdoc": "^6.0.0",
+      "swagger-ui-express": "^4.1.6"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.7"
+    }
+  }
+```
+
+## 4. Source code explained
+
+This code is a **Node.js** application using **Express**, **SQLServer**, and **Swagger** for creating a simple REST API to manage notes
+
+Here's a breakdown of its main components and functionalities:
+
+### 4.1. Setting Up Dependencies
+
+The code begins by importing necessary libraries:
+
+-**express** for the web server framework
+
+-**mssql** to interact with SQL Server database
+
+-**swagger-ui-express** and **swagger-jsdoc** for documenting the API using Swagger
 
 
