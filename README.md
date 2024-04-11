@@ -43,7 +43,7 @@ CREATE TABLE Notes (
 
 See the new database and table in SSMS
 
-![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/9c07b37e-e6d5-471d-825a-2d29cd941d09)
+![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/2490a25d-b0d5-4a6f-a370-59329e9f25c0)
 
 ## 2. Project folders and files structure
 
@@ -94,4 +94,43 @@ The code begins by importing necessary libraries:
 
 -**swagger-ui-express** and **swagger-jsdoc** for documenting the API using Swagger
 
+### 4.2. Express App Initialization
+
+An Express application is created, and a port number is defined for the server to listen on
+
+```javascript
+const app = express();
+```
+
+### 4.3. SQLServer Connection
+
+It establishes a connection to **SQLServer**
+
+The database used is "tutor", and it operates on a collection named "notes"
+
+```javascript
+// SQL Server setup and connection
+const config = {
+    server: 'localhost', // You can use an IP address or a server name
+    database: 'tutor',
+    user: 'sa', // Add your SQL Server username here
+    password: 'Luiscoco123456', // Add your SQL Server password here
+    port: 1433, // Specify the port here
+    options: {
+        encrypt: true, // Use this if you're on Windows Azure
+        trustServerCertificate: true // True if you're using self-signed certificates
+    }
+};
+
+sql.connect(config).then(pool => {
+    console.log('SQL Server connected successfully.');
+    return pool;
+}).catch(err => {
+    console.error('Error connecting to SQL Server:', err);
+});
+```
+
+We can verify the connection with SSMS
+
+![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/897cb497-bb2f-42ec-934f-4d28d983251a)
 
