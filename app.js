@@ -67,6 +67,8 @@ const swaggerOptions = {
 
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 /**
  * @swagger
  * /notes:
@@ -83,9 +85,6 @@ const swaggerSpec = swaggerJSDoc(swaggerOptions);
  *               items:
  *                 $ref: "#/components/schemas/Note"
  */
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
-// Example endpoint to retrieve all notes
 app.get("/notes", async (req, res) => {
     try {
         const pool = await sql.connect(config);
