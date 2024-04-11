@@ -134,3 +134,60 @@ We can verify the connection with SSMS
 
 ![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/897cb497-bb2f-42ec-934f-4d28d983251a)
 
+### 4.4. Middleware
+
+The application uses **express.json()** middleware to parse JSON-formatted request bodies, making it easy to handle JSON data sent in requests
+
+```javascript
+// Middleware to parse JSON data in the request body
+app.use(express.json());
+```
+
+### 4.5. Swagger Configuration
+
+The Swagger documentation is set up using **swagger-jsdoc** and **swagger-ui-express**
+
+The configuration specifies the API's information, such as its title, version, and description, and it also defines the schema for a Note object
+
+The API's routes are included in the documentation using a relative path to the file (in this example, "./app.js"), which should be updated to match the actual filename
+
+```javascript
+const swaggerOptions = {
+    definition: {
+        openapi: "3.0.0",
+        info: {
+            title: "Notes API",
+            version: "1.0.0",
+            description: "A simple API to manage notes",
+        },
+        servers: [
+            {
+                url: `http://localhost:${port}`,
+                description: "Development server",
+            },
+        ],
+        components: {
+            schemas: {
+                Note: {
+                    type: "object",
+                    properties: {
+                        title: {
+                            type: "string",
+                        },
+                        content: {
+                            type: "string",
+                        },
+                    },
+                },
+            },
+        },
+    },
+    apis: ["./app.js"], // Replace "app.js" with the actual filename of your main Node.js file
+};
+
+const swaggerSpec = swaggerJSDoc(swaggerOptions);
+
+// Serve Swagger documentation
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+```
+
