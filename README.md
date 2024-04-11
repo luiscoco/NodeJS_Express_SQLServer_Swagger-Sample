@@ -612,4 +612,13 @@ node app.js
 
 After running the application we can navigate to the Swagger OpenAPI docs: **http://localhost:3000/api-docs/#/**
 
+![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/84be8669-5bd3-4a7a-a062-b3eca8d2c370)
+
+We can create a new item in the database sending a POST request
+
+![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/cb836f7f-6982-47a3-9ded-6da33e763b43)
+
+We verify the created item sending a GET request
+
+![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/52250eae-c3b3-4235-a7dc-a504021585ea)
 
