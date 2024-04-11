@@ -622,3 +622,45 @@ We verify the created item sending a GET request
 
 ![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/52250eae-c3b3-4235-a7dc-a504021585ea)
 
+### Additional option for running your application
+
+If you find yourself **restarting your server frequently to reflect change**, consider using **nodemon** for development
+
+**nodemon** will automatically restart your application whenever you change any of the source files
+
+To use nodemon, follow these steps:
+
+**Install nodemon Globally** (if you haven't already): Run the following command in your terminal:
+
+```
+npm install -g nodemon
+```
+
+Start Your Application with nodemon, instead of node app.js, use:
+
+```
+nodemon app.js
+```
+
+To streamline this process, you can add a script to your **package.json** file to start your application with nodemon
+
+Open your **package.json** and under the scripts section, add a new script named **dev**:
+
+```json
+"scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+},
+```
+
+Now, you can simply run **npm run dev** in your terminal to start your application with nodemon
+
+Remember, whenever you make changes to your Swagger configuration or any other part of your application, those changes will be reflected automatically if you're using nodemon, and you can view your updated Swagger docs by refreshing the /api-docs page in your browser
+
+![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/3a392224-2c93-492a-bb71-a9336ff399a0)
+
+or you can also run
+
+![image](https://github.com/luiscoco/NodeJS_Express_SQLServer_Swagger-Sample/assets/32194879/13ce2d96-caef-4c97-ac7e-474972fb335d)
+
+
