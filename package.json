@@ -1,0 +1,23 @@
+{
+    "name": "sql-server-notes-api",
+    "version": "1.0.0",
+    "description": "A simple API to manage notes using SQL Server",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js",
+      "dev": "nodemon app.js"
+    },
+    "keywords": ["express", "sql-server", "api", "notes"],
+    "author": "Your Name",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.17.1",
+      "mssql": "^7.1.3",
+      "swagger-jsdoc": "^6.0.0",
+      "swagger-ui-express": "^4.1.6"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.7"
+    }
+  }
+  
